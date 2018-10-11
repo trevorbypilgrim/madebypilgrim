@@ -1,0 +1,10 @@
+{
+  "name": "Made By Pilgrim",
+  "short_name": "pilgrim",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "(being) made by pilgrim",
+  "icons": [],
+  "related_applications": []
+}
