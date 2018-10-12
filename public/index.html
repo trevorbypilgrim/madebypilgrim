@@ -85,6 +85,33 @@
           font-size: 12.8rem;
         }
       }
+      main > article > section > div {
+        max-width: 550px;
+        margin: 0 auto;;
+        text-align: center;
+      }
+      main > article > section div > h2 {
+        font-size: 48px;
+        font-size: 4.8rem;
+        line-height: 54px;
+        line-height: 5.4rem;
+      }
+      main > article > section > div > p {
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 20px;
+        line-height: 2.0rem;
+      }
+      main > article > section > div > hr {
+        width: 100%;
+        height: 1px;
+        margin: 24px auto;
+        background-color: white;
+      }
+      main > article > section > div > form {
+        max-width: 550px;
+        margin: 0 auto;;
+      }
       footer {
         position: fixed;
         bottom: 0;
@@ -110,16 +137,27 @@
     <main>
       <article>
         <section id="h" class="is-active">
-          <h1>We are a design & technology studio based in Charlotte, NC</h1>
+          <h1>We are a design & technology studio based in Charlotte, NC.</h1>
         </section>
         <section id="w">
-          <h2>See what has been made by pilgrim.</h2>
+          <div>
+            <h2>See what has been made by pilgrim.</h2>
+          </div>
         </section>
         <section id="a">
-          <h2>No one cared who we were until we put on the doublet</h2>
+          <div>
+            <h2>No one cared who we were until we put on the doublet.</h2>
+          </div>
         </section>
         <section id="c">
-          <h2>Get in youch w/ us here.</h2>
+          <div>
+            <h2>Get in youch w/ us here.</h2>
+            <form action="#" method="post">
+              <input id="form-email" type="email" name="email" placeholder="you@yourself.com" />
+            </form>
+            <hr />
+            <p>Our people will call your people.</p>
+          </div>
         </section>
       </article>
     </main>
