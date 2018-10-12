@@ -21,32 +21,76 @@
       }
       header {
         position: fixed;
+        z-index: 100;
         top: 0;
         width: 100%;
       }
       header > nav {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
       }
       header > nav > em > a {
         font-size: 20px;
         font-size: 2.0rem;
+        color: white;
       }
       header > nav > a {
         font-size: 16px;
         font-size: 1.6rem;
+        color: white;
       }
       main > article > section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 100vh;
+        position: fixed;
+        opacity: 0;
+        overflow-y: auto;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transition:
+          opacity 0.35s ease-in-out,
+          transform 0.35s ease-in-out;
+      }
+      main > article > section#h {
+        transform: translateY(-72px);
+      }
+      main > article > section#w {
+        transform: translateY(72px);
+      }
+      main > article > section#a {
+        transform: translateX(-72px);
+      }
+      main > article > section#c {
+        transform: translateX(72px);
+      }
+      main > article > section.is-active {
+        opacity: 1;
+        transform: translate(0) !important;
       }
       main > article > section > h1 {
-        margin: 0;
-        font-size: 128px;
-        font-size: 12.8rem;
+        max-width: 90%;
+        margin: 0 auto;;
+        font-size: 68px;
+        font-size: 7.2rem;
         text-align: justify;
+      }
+      @media (min-width: 768px) {
+        main > article > section > h1 {
+          max-width: 80%;
+          font-size: 128px;
+          font-size: 12.8rem;
+        }
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
       }
     </style>
   </head>
@@ -55,18 +99,27 @@
     <header>
       <nav>
         <em>
-          <a href-"/" title="home">pilgrim</a>
+          <a href="#h" title="home">pilgrim</a>
         </em>
-        <a href-"#w" title-"work">work</a>
-        <a href-"#a" title-"about">about</a>
-        <a href-"#c" title-"contact">contact</a>
+        <a href="#w" title-"work">work</a>
+        <a href="#a" title-"about">about</a>
+        <a href="#c" title-"contact">contact</a>
       </nav>
     </header>
 
     <main>
       <article>
-        <section>
+        <section id="h" class="is-active">
           <h1>We are a design & technology studio based in Charlotte, NC</h1>
+        </section>
+        <section id="w">
+          <h2>See what has been made by pilgrim.</h2>
+        </section>
+        <section id="a">
+          <h2>No one cared who we were until we put on the doublet</h2>
+        </section>
+        <section id="c">
+          <h2>Get in youch w/ us here.</h2>
         </section>
       </article>
     </main>
@@ -74,5 +127,22 @@
     <footer>
       <p>To a brave new world.</p>
     </footer>
+
+    <script>
+      const navLinks = document.querySelectorAll('header > nav a');
+      const sections = document.querySelectorAll('main > article > section');
+
+      const handleClicks = Array.from(navLinks).map(l => e => {
+        e.preventDefault();
+
+        Array.from(sections).forEach(s => {
+          s.classList.toggle('is-active', s.id === l.getAttribute('href').slice(1));
+        });
+      });
+
+      Array.from(navLinks).forEach((l, i) => {
+        l.addEventListener('click', handleClicks[i]);
+      });
+    </script>
   </body>
 </html>
