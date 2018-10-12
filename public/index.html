@@ -41,9 +41,6 @@
         color: white;
       }
       main > article > section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         position: fixed;
         opacity: 0;
         overflow-y: auto;
@@ -51,9 +48,17 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        padding: 72px 0;
         transition:
           opacity 0.35s ease-in-out,
           transform 0.35s ease-in-out;
+      }
+      @media (min-width: 768px) {
+        main > article > section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
       }
       main > article > section#h {
         transform: translateY(-72px);
