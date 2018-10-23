@@ -66,6 +66,7 @@ main > article > section#a {
 main > article > section#c {
   transform: translateX(72px);
 }
+[data-no-js="true"] main > article > section.is-active,
 main > article > section.is-active {
   position: relative;
   opacity: 1;
