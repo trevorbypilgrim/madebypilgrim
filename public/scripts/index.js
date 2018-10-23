@@ -1,10 +1,15 @@
+// Enable progressive enhancements
+document.body.setAttribute('data-no-js', false);
+
 // Document scripts
 function handleDOMContentLoaded() {
+  // Interactive DOM elements
   const navLinks = document.querySelectorAll('header > nav a');
   const sections = document.querySelectorAll('main > article > section');
   const contact = document.getElementById('c');
   const form = contact.querySelector('form');
 
+  // Event handler functions
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -27,6 +32,7 @@ function handleDOMContentLoaded() {
     });
   });
 
+  // Add event listeners
   Array.from(navLinks).forEach((l, i) => {
     l.addEventListener('click', handleClicks[i]);
   });

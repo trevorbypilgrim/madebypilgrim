@@ -16,6 +16,7 @@ header {
   left: 0;
   width: 100%;
   padding: 30px;
+  background: linear-gradient(#111, transparent);
 }
 header > nav {
   display: flex;
@@ -33,6 +34,7 @@ header > nav > a {
   color: white;
 }
 main {
+  position: relative;
   overflow: hidden;
 }
 main > article {
@@ -87,7 +89,7 @@ main > article > section > h1 {
   }
 }
 main > article > section > div {
-  max-width: 550px;
+  max-width: 600px;
   margin: 0 auto;;
   text-align: center;
 }
@@ -96,6 +98,10 @@ main > article > section div > h2 {
   font-size: 4.8rem;
   line-height: 54px;
   line-height: 5.4rem;
+}
+main > article > section div > h2 > em {
+  display: block;
+  font-style: italic;
 }
 main > article > section > div > p {
   font-size: 16px;
@@ -110,13 +116,28 @@ main > article > section > div > hr {
   background-color: white;
 }
 main > article > section > div > form {
+  display: flex;
+  justify-content: center;
   max-width: 550px;
   margin: 0 auto;;
+}
+main > article > section > div > form > [type="email"],
+main > article > section > div > form > [type="submit"] {
+  line-height: 30px;
+  padding: 0 15px;
+  border: 0;
+  background-color: #FFF;
+  -webkit-appearance: none;
+}
+main > article > section > div > form > [type="submit"] {
+  border-left: 1px solid #111;
+  cursor: pointer;
 }
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  background: linear-gradient(transparent, #111);
   text-align: center;
 }
