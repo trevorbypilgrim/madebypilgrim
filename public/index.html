@@ -11,131 +11,7 @@
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        font-size: 62.5%; // Sets up the Base 10 stuff
-      }
-      body {
-        margin: 0;
-        background-color: #111;
-        color: #EFEFEF;
-      }
-      header {
-        position: fixed;
-        z-index: 100;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 30px;
-      }
-      header > nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
-      header > nav > em > a {
-        font-size: 20px;
-        font-size: 2.0rem;
-        color: white;
-      }
-      header > nav > a {
-        font-size: 16px;
-        font-size: 1.6rem;
-        color: white;
-      }
-      main {
-        overflow: hidden;
-      }
-      main > article {
-        position: relative;
-        padding: 90px 0;
-      }
-      main > article > section {
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-        transition:
-          opacity 0.35s ease-in-out,
-          transform 0.35s ease-in-out;
-      }
-      @media (min-width: 768px) {
-        main > article > section {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-      }
-      main > article > section#h {
-        transform: translateY(-72px);
-      }
-      main > article > section#w {
-        transform: translateY(72px);
-      }
-      main > article > section#a {
-        transform: translateX(-72px);
-      }
-      main > article > section#c {
-        transform: translateX(72px);
-      }
-      main > article > section.is-active {
-        position: relative;
-        opacity: 1;
-        transform: translate(0) !important;
-      }
-      main > article > section > h1 {
-        max-width: 90%;
-        margin: 0 auto;;
-        font-size: 68px;
-        font-size: 7.2rem;
-        text-align: justify;
-      }
-      @media (min-width: 768px) {
-        main > article > section > h1 {
-          max-width: 80%;
-          font-size: 128px;
-          font-size: 12.8rem;
-        }
-      }
-      main > article > section > div {
-        max-width: 550px;
-        margin: 0 auto;;
-        text-align: center;
-      }
-      main > article > section div > h2 {
-        font-size: 60px;
-        font-size: 4.8rem;
-        line-height: 54px;
-        line-height: 5.4rem;
-      }
-      main > article > section > div > p {
-        font-size: 16px;
-        font-size: 1.6rem;
-        line-height: 20px;
-        line-height: 2.0rem;
-      }
-      main > article > section > div > hr {
-        width: 100%;
-        height: 1px;
-        margin: 30px auto;
-        background-color: white;
-      }
-      main > article > section > div > form {
-        max-width: 550px;
-        margin: 0 auto;;
-      }
-      footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/index.css">
   </head>
 
   <body>
@@ -169,7 +45,8 @@
           <div>
             <h2>Get in youch w/ us here.</h2>
             <form action="#" method="post">
-              <input id="form-email" type="email" name="email" placeholder="you@yourself.com" />
+              <input required id="form-email" type="email" name="email" placeholder="you@yourself.com" />
+              <input type="submit" value="Let's do this." />
             </form>
             <hr />
             <p>Our people will call your people.</p>
@@ -182,21 +59,6 @@
       <p>To a brave new world.</p>
     </footer>
 
-    <script>
-      const navLinks = document.querySelectorAll('header > nav a');
-      const sections = document.querySelectorAll('main > article > section');
-
-      const handleClicks = Array.from(navLinks).map(l => e => {
-        e.preventDefault();
-
-        Array.from(sections).forEach(s => {
-          s.classList.toggle('is-active', s.id === l.getAttribute('href').slice(1));
-        });
-      });
-
-      Array.from(navLinks).forEach((l, i) => {
-        l.addEventListener('click', handleClicks[i]);
-      });
-    </script>
+    <script src="/scripts/index.js"></script>
   </body>
 </html>
